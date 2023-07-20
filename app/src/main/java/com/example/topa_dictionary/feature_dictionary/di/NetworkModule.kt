@@ -30,7 +30,7 @@ object NetworkModule {
     fun provideRetrofitInstance(): Retrofit {
 
         return Retrofit.Builder()
-            .baseUrl("https://api.dectionaryapi.dev/")
+            .baseUrl("https://api.dictionaryapi.dev/")
             .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .client(logingInterceptror())
