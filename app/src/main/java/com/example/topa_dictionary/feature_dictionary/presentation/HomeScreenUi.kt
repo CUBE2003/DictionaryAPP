@@ -29,6 +29,7 @@ import com.example.topa_dictionary.feature_dictionary.presentation.ui_components
 import com.example.topa_dictionary.feature_dictionary.presentation.ui_components.PartsOfSpeechDefinitioncomponent
 import com.example.topa_dictionary.feature_dictionary.presentation.ui_components.PronounciationComponent
 import com.example.topa_dictionary.feature_dictionary.presentation.ui_components.SearchTextFieldComponent
+import com.example.topa_dictionary.feature_dictionary.presentation.ui_state.DefaultState
 import com.example.topa_dictionary.feature_dictionary.presentation.ui_state.DefinationUiState
 import com.example.topa_dictionary.ui.theme.Topa_DictionaryTheme
 import kotlinx.coroutines.flow.collectLatest
@@ -38,7 +39,7 @@ import kotlinx.coroutines.flow.collectLatest
 fun HomeScreenUI(
     definationViewModel: DefinationViewModel = hiltViewModel()
 ) {
-
+    DefaultState()
     val snackbarHostState = remember {
         SnackbarHostState()
     }
@@ -109,6 +110,16 @@ fun HomeContent(
                 )
             }
 
+            if(!definitionUiState.isLoading){
+                item {
+
+                        DefaultState()
+
+
+                }
+
+            }
+
             if (definitionUiState.isLoading || definitionUiState.defination?.isEmpty() == true) {
 
                 item {
@@ -128,7 +139,7 @@ fun HomeContent(
 
             }
 
-            if (!definitionUiState.isLoading && !definitionUiState.defination.isNullOrEmpty()) {
+            if (!definitionUiState.isLoading && !definitionUiState.defination.isNullOrEmpty() ) {
                 item {
                     Spacer(modifier = Modifier.height(16.dp))
 
