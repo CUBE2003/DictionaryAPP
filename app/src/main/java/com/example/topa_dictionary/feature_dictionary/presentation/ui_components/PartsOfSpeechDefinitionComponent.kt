@@ -27,7 +27,7 @@ fun PartsOfSpeechDefinitioncomponent(
             headerText = partOfSpeech,
             size = definitions?.size ?: 0,
 
-        )
+            )
 
         definitions?.forEachIndexed { index, meaning ->
             Text(
@@ -35,14 +35,14 @@ fun PartsOfSpeechDefinitioncomponent(
                     withStyle(
                         style = SpanStyle(
 
-                            color = Color.Black
+                            color = Color.White
                         )
                     ) {
                         append("${index + 1}. ")
                     }
                     withStyle(
                         style = SpanStyle(
-                            fontFamily = FontFamily.Cursive
+                            fontFamily = FontFamily.Default
                         )
                     ) {
                         append(meaning.definition ?: "")
@@ -55,5 +55,5 @@ fun PartsOfSpeechDefinitioncomponent(
         }
     }
 
-    }
+}
 

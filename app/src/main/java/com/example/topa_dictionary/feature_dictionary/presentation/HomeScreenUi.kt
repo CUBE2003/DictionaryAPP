@@ -1,5 +1,6 @@
 package com.example.topa_dictionary.feature_dictionary.presentation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +19,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.topa_dictionary.feature_dictionary.common_util.UiEvents
@@ -96,6 +98,7 @@ fun HomeContent(
         modifier = Modifier
             .fillMaxSize()
             .padding(paddingValues)
+            .background(Color.Unspecified)
     ) {
         LazyColumn(contentPadding = PaddingValues(14.dp)) {
             item {

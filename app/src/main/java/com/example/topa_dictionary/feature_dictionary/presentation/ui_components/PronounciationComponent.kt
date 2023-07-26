@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -20,19 +20,18 @@ fun PronounciationComponent(
 ) {
     Column {
         Text(
-            text = word,
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold
-        )
+            text = word.capitalize(),
+            fontSize = 28.sp,
+            fontFamily = FontFamily.Default,
+
+            )
         Spacer(modifier = Modifier.height(8.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = phonetic,
+            Text(
+                text = phonetic,
                 fontSize = 16.sp,
-                color = Color.Blue
+                color = Color.White
             )
         }
-
-
     }
-
 }
